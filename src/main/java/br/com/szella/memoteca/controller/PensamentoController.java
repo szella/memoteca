@@ -4,6 +4,7 @@ import br.com.szella.memoteca.mapper.PensamentoMapper;
 import br.com.szella.memoteca.model.request.PensamentoRequest;
 import br.com.szella.memoteca.model.response.PensamentoResponse;
 import br.com.szella.memoteca.service.PensamentoService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -46,7 +47,7 @@ public class PensamentoController {
     }
 
     @PostMapping
-    public ResponseEntity<Void> criar(@RequestBody PensamentoRequest request) {
+    public ResponseEntity<Void> criar(@RequestBody @Valid PensamentoRequest request) {
         service.criar(request);
 
         return ResponseEntity
@@ -55,7 +56,7 @@ public class PensamentoController {
     }
 
     @PutMapping(value = "/{id}")
-    public ResponseEntity<Void> editar(@PathVariable Long id, @RequestBody PensamentoRequest request) {
+    public ResponseEntity<Void> editar(@PathVariable Long id, @RequestBody @Valid PensamentoRequest request) {
         service.editar(id, request);
 
         return ResponseEntity

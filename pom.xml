@@ -14,7 +14,7 @@
     <artifactId>memoteca</artifactId>
     <name>memoteca</name>
     <description>Back-end para projeto front-end da Alura</description>
-    <version>0.0.1</version>
+    <version>0.0.2</version>
 
     <properties>
         <java.version>17</java.version>
@@ -58,6 +58,11 @@
             <groupId>org.springdoc</groupId>
             <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
             <version>2.0.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
 
     </dependencies>

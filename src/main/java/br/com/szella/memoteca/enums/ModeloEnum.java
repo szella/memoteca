@@ -1,6 +1,6 @@
 package br.com.szella.memoteca.enums;
 
-import br.com.szella.memoteca.exception.DBException;
+import br.com.szella.memoteca.exception.ApplicationException;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
@@ -19,6 +19,6 @@ public enum ModeloEnum {
         return Arrays.stream(ModeloEnum.values())
                 .filter(modeloEnum -> modeloEnum.getDescription().equals(description))
                 .findFirst()
-                .orElseThrow(() -> new DBException(ErroMessagesEnum.ERRO_DB));
+                .orElseThrow(() -> new ApplicationException(ErroMessagesEnum.ERRO_ENUM));
     }
 }
